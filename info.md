@@ -1,1 +1,1 @@
-# teste render
+# Custom component integration for raceland based devices
