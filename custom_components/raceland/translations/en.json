@@ -12,10 +12,10 @@
                     "discovery_prefix": "Discovery topic prefix"
                 },
                 "description": "Please enter the Tasmota configuration.",
-                "title": "Raceland"
+                "title": "Tasmota"
             },
             "confirm": {
-                "description": "Do you want to set up Raceland?"
+                "description": "Do you want to set up Tasmota?"
             }
         }
     }

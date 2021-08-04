@@ -1,4 +1,4 @@
-"""Constants used by multiple Raceland modules."""
+"""Constants used by multiple Tasmota modules."""
 CONF_DISCOVERY_PREFIX = "discovery_prefix"
 
 DATA_REMOVE_DISCOVER_COMPONENT = "raceland_discover_{}"
