@@ -11,6 +11,9 @@ from homeassistant.data_entry_flow import FlowResult
 from homeassistant.helpers.typing import DiscoveryInfoType
 
 from .const import CONF_DISCOVERY_PREFIX, DEFAULT_PREFIX, DOMAIN
+import logging
+
+_LOGGER = logging.getLogger(__name__)
 
 
 class FlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
@@ -30,7 +33,11 @@ class FlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
         await self.async_set_unique_id(DOMAIN)
 
         # Validate the topic, will throw if it fails
-        prefix = cast(ReceiveMessage, discovery_info).subscribed_topic
+        
+        # @zroger499: Not sure how the type cast function works in this situation. Instead of using a customclass simply get the value from the map
+        # prefix = cast(ReceiveMessage, discovery_info).subscribed_topic
+        prefix = discovery_info.get("subscribed_topic")
+        
         if prefix.endswith("/#"):
             prefix = prefix[:-2]
         try:
